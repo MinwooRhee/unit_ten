@@ -1,3 +1,8 @@
+# Minwoo Rhee
+# 20181210
+# assignment_ten
+# click to draw faces
+
 import pygame, sys
 from pygame.locals import *
 import face
