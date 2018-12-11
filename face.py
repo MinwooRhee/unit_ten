@@ -25,19 +25,27 @@ class Face:
     def draw_face(self, position):
         """
         drawing a face with randomized colors
-        coordinates for facial features are determined relative to the position of mouse
-        :param position: position of the mouse from pygame.mouse.get_pos()
+        coordinates for facial features are determined relative to the position
+        :param position: tuple, coordinates on the surface
         :return: None
         """
         color_list = [self.RED, self.BLUE, self.GREEN, self.YELLOW, self.PURPLE]
+
+        # face
         color_face = random.choice(color_list)
         pygame.draw.circle(self.main_surface, color_face, position, 70, 0)
         color_list.remove(color_face)  # remove the color used for the face to avoid facial feature being the same color
+
+        # eyes
         pygame.draw.circle(self.main_surface, random.choice(color_list), (position[0] - 35, position[1] - 25), 15, 0)
         pygame.draw.circle(self.main_surface, random.choice(color_list), (position[0] + 35, position[1] - 25), 15, 0)
+
+        # nose
         pygame.draw.polygon(self.main_surface, random.choice(color_list),
                             [(position[0], position[1]), (position[0], position[1] - 15),
                              (position[0] + 25, position[1])], 0)
-        #  position is a tuple
+
+        # mouth
         pygame.draw.rect(self.main_surface, random.choice(color_list), (position[0] - 35, position[1] + 25, 70, 30), 0)
+
         pygame.display.update()
