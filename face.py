@@ -1,6 +1,6 @@
 # Minwoo Rhee
-# 20181210
-# face
+# 20181211
+# face.py
 # class Face is here
 
 
@@ -36,7 +36,8 @@ class Face:
         pygame.draw.circle(self.main_surface, random.choice(color_list), (position[0] - 35, position[1] - 25), 15, 0)
         pygame.draw.circle(self.main_surface, random.choice(color_list), (position[0] + 35, position[1] - 25), 15, 0)
         pygame.draw.polygon(self.main_surface, random.choice(color_list),
-                    [(position[0], position[1]), (position[0], position[1] - 15), (position[0] + 25, position[1])], 0)
+                            [(position[0], position[1]), (position[0], position[1] - 15),
+                             (position[0] + 25, position[1])], 0)
         #  position is a tuple
         pygame.draw.rect(self.main_surface, random.choice(color_list), (position[0] - 35, position[1] + 25, 70, 30), 0)
         pygame.display.update()
